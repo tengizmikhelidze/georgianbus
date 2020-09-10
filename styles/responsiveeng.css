@@ -1,0 +1,134 @@
+@media (max-width: 930px){
+    .bg-video{
+        display: none;
+    }
+
+    .right-bg-video{
+        display: initial;
+    }
+
+    #right-bgvideo{
+        display: initial;
+    }
+
+    .form-container{
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media (max-width: 500px), (max-height: 590px) {
+    .img-btn{
+        width: 90%;
+    }
+    .price-wrapper h2{
+        font-size: 30px;
+    }
+    .sign-in-wrapper{
+        height: 40%;
+    }
+    .sign-up-wrapper{
+        height: 60%;
+    }
+    .schedule-wrapper{
+        width: 160px;
+    }
+    .schedule-wrapper span{
+        font-size: 26px;
+    }
+    .schedule-wrapper select{
+        width: 150px;
+    }
+    .schedule-table p{
+        font-size: 19px;
+    }
+    .schedule-wrapper button{
+        width: 100px;
+    }
+    .tickets-qr img{
+        width: 150px;
+        height: 150px;
+    }
+    .tickets-wrapper h2{
+        font-size: 26px;
+    }
+    .contact-wrapper p{
+        font-size: 24px;
+    }
+    .contact-social {
+        font-size: 24px;
+    }
+    .contact-wrapper{
+        width: 150px;
+    }
+}
+
+@media (max-width:450px){
+    .price-wrapper h2{
+        text-align: center;
+        width: 150px;
+    }
+}
+
+@media (max-width: 450px), (max-height: 590px) {
+    .form-left-column p{
+        font-size: 20px;
+    }
+    .img-btn a{
+        font-size: 19px;
+    }
+    .img-btn{
+        font-size: 19px;
+    }
+    .price-wrapper span{
+        font-size: 26px;
+    }
+    .price-wrapper select{
+     width: 100px;   
+    }
+    .price-wrapper button{
+        width: 130px;
+    }
+    .price-wrapper p{
+        font-size: 22px;
+    }
+    .sign-in-input input, .sign-up-input input{
+        width: 150px;
+        font-size: 10px;
+    }
+    .sign-ip-input label, .sign-up-input label{
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+/* @media (max-height: 630px){
+    .form-left-column p{
+        font-size: 26px;
+    }
+} */
+
+@media (max-height: 590px){
+    .left-text{
+        margin-top: 15px;
+    }
+}
+
+@media (max-height: 530px){
+    .left-text{
+        margin-top: 8px;
+    }
+    .form-left-column p{
+        font-size: 22px;
+    }
+    .sign-up-btn{
+        margin-top: 10px;
+    }
+}
+
+@media (max-height: 480px){
+    .sign-up-input{
+        margin: 8px 0px 8px 0px;
+    }
+}

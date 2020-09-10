@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tengiz Mikhelidze">
+    <title>Travel Around Georgia</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+    <script src="javascript/animation.js"></script>
+    <script src="javascript/price.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/rus.css">
+    <link rel="stylesheet" href="styles/responsiverus.css">
+</head>
+
+<body>
+    <div class="bg-video">
+        <video autoplay muted loop id="bgvideo">
+            <source src="videos/lake.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="form-whole-wrapper">
+        <div class="form-container">
+            <div class="language">
+                <div class="lang georgian">
+                    <a href="geo.html"> <img src="images/geo.png" alt="georgian"> </a>
+                </div>
+                <div class="lang english">
+                    <a href="index.html"> <img src="images/uk.png" alt="english"> </a>
+                </div>
+                <div class=" lang russian">
+                    <a href="#"> <img src="images/rus.png" alt="russian"> </a>
+                </div>
+                <div class="lang signed-in">
+                    <a href="#"><img src="images/no.png"></a>
+                </div>
+            </div>
+            <div class="form-left-column">
+                <div class="img-sign-in-text left-text" id="img-sign-in-text">
+                    <p>Добро пожаловать, наш друг, мы скучали по тебе</p>
+                </div>
+                <div class="img-sign-up-text left-text" id="img-sign-up-text">
+                    <p>Присоединяйтесь к нам и откройте для себя множество возможностей!</p>
+                </div>
+                <div class="img-price-text left-text" id="img-price-text">
+                    <p>Проверить цены и дешево путешествовать по Грузии</p>
+                </div>
+                <div class="img-schedule-text left-text" id="img-schedule-text">
+                    <p>Очень гибкий график</p>
+                </div>
+                <div class="img-tickets-text left-text" id="img-tickets-text">
+                    <p>Пожалуйста, проверьте ваши билеты</p>
+                </div>
+                <div class="img-contact-text left-text" id="img-contact-text">
+                    <p>контакт</p>
+                </div>
+                <div class="img-btns">
+                    <div class="img-price-btn img-btn" id="active" onclick="checkActive(this, `rus`)">
+                        цена
+                    </div>
+                    <div class="img-sign-in-btn img-btn" id="noactive" onclick="checkActive(this, `rus`)">
+                        авторизоваться
+                    </div>
+                    <div class="img-sign-up-btn img-btn" id="noactive" onclick="checkActive(this, `rus`)">
+                        Регистрация
+                    </div>
+                    <div class="img-schedule-btn img-btn" id="noactive" onclick="checkActive(this, `rus`)">
+                        график
+                    </div>
+                    <div class="img-my-tickets-btn img-btn" id="noactive" onclick="checkActive(this, `rus`)">
+                        Билеты
+                    </div>
+                    <div class="img-contact-btn img-btn" id="noactive" onclick="checkActive(this, `rus`)">
+                        контакт
+                    </div>
+                </div>
+            </div>
+            <div class="form-right-column">
+                <div class="right-bg-video">
+                    <video autoplay muted loop id="right-bgvideo">
+                        <source src="videos/lake.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="sign-up-wrapper" id="sign-up-wrapper">
+                    <form action="registration.php" method="POST">
+                        <div class="sign-up-input">
+                            <label for="username">логин</label>
+                            <input type="text" id="username">
+                        </div>
+                        <div class="sign-up-input">
+                            <label for="pass">пароль</label>
+                            <input type="password" id="pass">
+                        </div>
+                        <div class="sign-up-input">
+                            <label for="pass-confirm">проверить пароль</label>
+                            <input type="password" id="pass-confirm">
+                        </div>
+                        <div class="sign-up-input">
+                            <label for="email">Email</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="sign-up-btn">
+                            <button type="submit" name="create">Регистрация</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="price-wrapper" id="price-wrapper">
+                    <h2>Цена</h2>
+                    <label>
+                        <span>от</span>
+                        <select id="from">
+                            <option value="tbilisi">Тбилиси</option>
+                            <option value="kutaisi">Кутаисй</option>
+                            <option value="batumi">Батуми</option>
+                            <option value="kobuleti">Кобулети</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>куда</span>
+                        <select id="where">
+                            <option value="tbilisi">Тбилиси</option>
+                            <option value="kutaisi">Кутаисй</option>
+                            <option value="batumi">Батуми</option>
+                            <option value="kobuleti">Кобулети</option>
+                        </select>
+                    </label>
+                    <button class="submit" type="button" onclick="price(`en`)">Поиск</button>
+                    <p id="price">цена : 0 Гель</p>
+                </div>
+                <div class="sign-in-wrapper" id="sign-in-wrapper">
+                    <form action="loginrus.php" method="POST">
+                        <div class="sign-in-input">
+                            <label for="sign-in-username">логин</label>
+                            <input type="text" name="sign-in-username">
+                        </div>
+                        <div class="sign-in-input">
+                            <label for="sign-in-pass">пароль</label>
+                            <input type="password" name="sign-in-pass">
+                        </div>
+                        <div class="sign-in-btn">
+                            <button type="submit" name="sign-in-submit">  авторизоваться </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="schedule-wrapper" id="schedule-wrapper">
+                    <label>
+                        <span>от</span>
+                        <select id="schedulefrom">
+                            <option value="tbilisi">Тбилиси</option>
+                            <option value="kutaisi">Кутаисй</option>
+                            <option value="batumi">Батуми</option>
+                            <option value="kobuleti">Кобулети</option>
+                        </select>
+                    </label>
+                    <label> <br>
+                        <span>куда</span>
+                        <select id="schedulewhere">
+                            <option value="tbilisi">Тбилиси</option>
+                            <option value="kutaisi">Кутаисй</option>
+                            <option value="batumi">Батуми</option>
+                            <option value="kobuleti">Кобулети</option>
+                        </select>
+                    </label> <br>
+                    <button class="submit" type="button">Поиск</button>
+                    <div class="schedule-table">
+                        <!-- <div class="table-content day">
+                          <p>  Every Day </p>
+                        </div> -->
+                        <div class="table-content departure">
+                            <p>Вылет из</p>
+                            <p> 08:00 <br> 10:00 <br> 12:00 <br>
+                                14:00 <br> 18:00 </p>
+                        </div>
+                        <div class="table-content arrival">
+                            <p>прибытие</p>
+                            <p>12:00 <br> 14:00 <br> 16:00 <br> 18:00 <br> 22:00 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tickets-wrapper" id="tickets-wrapper">
+                    <h2>Ваши Билеты : </h2>
+                    <div class="tickets-qr">
+                        <img src="images/ticket.png" alt="ticket">
+                    </div>
+                </div>
+                <div class="contact-wrapper" id="contact-wrapper">
+                    <div class="contact-label contact-email">
+                        <p> е-мейл : </p>
+                        <p> mixelidzet@gmail.com</p>
+                    </div>
+                    <div class="contact-label contact-phone">
+                        <p> телефон : </p>
+                        <p> +995 555 55 22 50 </p>
+                    </div>
+                    <div class="contact-label contact-social">
+                        <p> Facebook : </p>
+                        <p> <a href="https://www.facebook.com/tengo.mixelidze">Tengiz Mikhelidze</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

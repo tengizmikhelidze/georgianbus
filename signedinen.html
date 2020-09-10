@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tengiz Mikhelidze">
+    <title>Travel Around Georgia</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+    <script src="javascript/animation.js"></script>
+    <script src="javascript/price.js"></script>
+    <link rel="stylesheet" href="styles/responsiveeng.css">
+    <link rel="stylesheet" href="styles/signedin.css">
+</head>
+
+<body>
+    <div class="bg-video">
+        <video autoplay muted loop id="bgvideo">
+            <source src="videos/lake.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="form-whole-wrapper">
+        <div class="form-container">
+            <div class="language">
+                <div class="lang georgian">
+                    <a href="geo.html"> <img src="images/geo.png" alt="georgian"> </a>
+                </div>
+                <div class="lang english">
+                    <a href="#"> <img src="images/uk.png" alt="english"> </a>
+                </div>
+                <div class="lang russian">
+                    <a href="rus.html"> <img src="images/rus.png" alt="russian"> </a>
+                </div>
+                <div class="lang signed-in">
+                    <a href=""><img src="https://img.icons8.com/flat_round/64/000000/checkmark.png" /></a>
+                </div>
+            </div>
+            <div class="form-left-column">
+                <div class="img-sign-in-text left-text" id="img-sign-in-text">
+                    <p>Welcome back our friend we missed you</p>
+                </div>
+                <div class="img-sign-up-text left-text" id="img-sign-up-text">
+                    <p>Join us and discover great amount of opportunities</p>
+                </div>
+                <div class="img-price-text left-text" id="img-price-text">
+                    <p>Check Prices and Travel cheaply around Georgia</p>
+                </div>
+                <div class="img-schedule-text left-text" id="img-schedule-text">
+                    <p>Very flexible schedule</p>
+                </div>
+                <div class="img-tickets-text left-text" id="img-tickets-text">
+                    <p>Please, Check your tickets</p>
+                </div>
+                <div class="img-contact-text left-text" id="img-contact-text">
+                    <p>Contact Us</p>
+                </div>
+                <div class="img-btns">
+                    <div class="img-price-btn img-btn" id="active" onclick="checkActive(this, `en`)">
+                        price
+                    </div>
+                    <div class="img-sign-in-btn img-btn" id="noactive" onclick="checkActive(this, `en`)">
+                        sign out
+                    </div>
+                    <div class="img-sign-up-btn img-btn" id="noactive" onclick="checkActive(this, `en`)">
+                        sign up
+                    </div>
+                    <div class="img-schedule-btn img-btn" id="noactive" onclick="checkActive(this, `en`)">
+                        schedule
+                    </div>
+                    <div class="img-my-tickets-btn img-btn" id="noactive" onclick="checkActive(this, `en`)">
+                        my tickets
+                    </div>
+                    <div class="img-contact-btn img-btn" id="noactive" onclick="checkActive(this, `en`)">
+                        contact
+                    </div>
+                </div>
+            </div>
+            <div class="form-right-column">
+                <div class="right-bg-video">
+                    <video autoplay muted loop id="right-bgvideo">
+                        <source src="videos/lake.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="sign-up-wrapper" id="sign-up-wrapper">
+                    <form action="registration.php" method="POST">
+                        <div class="sign-up-input">
+                            <label for="username">username</label>
+                            <input type="text" name="username" required>
+                        </div>
+                        <div class="sign-up-input">
+                            <label for="password">password</label>
+                            <input type="password" name="password" required>
+                        </div>
+                        <div class="sign-up-input">
+                            <label for="pass-confirm">confirm password</label>
+                            <input type="password" name="pass-confirm" required>
+                        </div>
+                        <div class="sign-up-input">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="sign-up-btn">
+                            <button type="submit" name="create">sign up</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="price-wrapper" id="price-wrapper">
+                    <h2>Check Direction Price</h2>
+                    <label>
+                        <span>From</span>
+                        <select id="from">
+                            <option value="tbilisi">Tbilisi</option>
+                            <option value="kutaisi">Kutaisi</option>
+                            <option value="batumi">Batumi</option>
+                            <option value="kobuleti">Kobuleti</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span>Where</span>
+                        <select id="where">
+                            <option value="tbilisi">Tbilisi</option>
+                            <option value="kutaisi">Kutaisi</option>
+                            <option value="batumi">Batumi</option>
+                            <option value="kobuleti">Kobuleti</option>
+                        </select>
+                    </label>
+                    <button class="submit" type="button" onclick="price(`en`)">Search</button>
+                    <p id="price">Price : 0 Gel</p>
+                </div>
+                <div class="sign-in-wrapper" id="sign-in-wrapper">
+                    <p>You are signed in</p>
+                    <form action="logout.php" method="POST">
+                        <div class="sign-in-input">
+                            <button name="logout" id="logout">Sign Out</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="schedule-wrapper" id="schedule-wrapper">
+                    <label>
+                        <span>From</span>
+                        <select id="schedulefrom">
+                            <option value="tbilisi">Tbilisi</option>
+                            <option value="kutaisi">Kutaisi</option>
+                            <option value="batumi">Batumi</option>
+                            <option value="kobuleti">Kobuleti</option>
+                        </select>
+                    </label>
+                    <label> <br>
+                        <span>Where</span>
+                        <select id="schedulewhere">
+                            <option value="tbilisi">Tbilisi</option>
+                            <option value="kutaisi">Kutaisi</option>
+                            <option value="batumi">Batumi</option>
+                            <option value="kobuleti">Kobuleti</option>
+                        </select>
+                    </label> <br>
+                    <button class="submit" type="button">Search</button>
+                    <div class="schedule-table">
+                        <!-- <div class="table-content day">
+                          <p>  Every Day </p>
+                        </div> -->
+                        <div class="table-content departure">
+                            <p>Departure</p>
+                            <p> 08:00 <br> 10:00 <br> 12:00 <br>
+                                14:00 <br> 18:00 </p>
+                        </div>
+                        <div class="table-content arrival">
+                            <p>arrival</p>
+                            <p>12:00 <br> 14:00 <br> 16:00 <br> 18:00 <br> 22:00 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tickets-wrapper" id="tickets-wrapper">
+                    <h2>Your Tickets : </h2>
+                    <div class="tickets-qr">
+                        <img src="images/ticket.png" alt="ticket">
+                    </div>
+                </div>
+                <div class="contact-wrapper" id="contact-wrapper">
+                    <div class="contact-label contact-email">
+                        <p> Email : </p>
+                        <p> mixelidzet@gmail.com</p>
+                    </div>
+                    <div class="contact-label contact-phone">
+                        <p> Phone : </p>
+                        <p> +995 555 55 22 50 </p>
+                    </div>
+                    <div class="contact-label contact-social">
+                        <p> Facebook : </p>
+                        <p> <a href="https://www.facebook.com/tengo.mixelidze">Tengiz Mikhelidze</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
